@@ -1,3 +1,128 @@
-p {
-  color: red;
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600,700|Source+Sans+Pro:400,600,700&display=swap");
+
+body {
+  background: #ddeefc;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  &:focus {
+    outline: none;
+  }
+}
+
+.cart-input-form {
+  background-color: #fff;
+  padding: 25px;
+  padding-top: 195px;
+  border-radius: 25px;
+  width: 570px;
+  margin: 0 auto;
+}
+
+select {
+  width: 100%;
+}
+
+.cart-input {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+
+  input {
+    font-size: 24px;
+    height: 50px;
+  }
+}
+
+.cart-input-row {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 15px;
+}
+
+.cart-input-label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.cart-input__group {
+  width: 100%;
+  .cart-input-col {
+    display: flex;
+    margin-top: 5px;
+
+    select {
+      font-size: 18px;
+      height: 50px;
+      align-items: center;
+      padding-left: 15px;
+      margin-right: 20px;
+    }
+  }
+}
+
+.cart-input-cvv {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    font-size: 24px;
+    width: 100%;
+    max-width: 150px;
+    height: 50px;
+  }
+}
+
+.cart-button {
+  button {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 22px;
+    color: #fff;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #2364d2;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+.cart-list {
+  max-width: 430px;
+  height: 270px;
+  background-color: #00bbb7;
+  position: relative;
+  z-index: 1;
+  margin: 0 auto -160px;
+  border-radius: 15px;
+  padding: 25px 15px;
+
+  .cart-item__top {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px 40px;
+
+    .cart-item__chip {
+      img {
+        width: 60px;
+      }
+    }
+
+    .cart-item__logo {
+      img {
+        width: 100px;
+      }
+    }
+  }
+
+  .cart-item__number {
+    padding: 10px 15px;
+    font-size: 27px;
+    font-weight: 500;
+    color: #fff;
+  }
 }

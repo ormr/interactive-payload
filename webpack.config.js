@@ -53,7 +53,7 @@ const plugins = () => {
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, 'src/assets/canary.ico'),
+        from: path.resolve(__dirname, 'src/assets/favicon.svg'),
         to: path.resolve(__dirname, 'dist')
       }
     ]),
