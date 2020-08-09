@@ -1,20 +1,34 @@
 import './styles/index.scss';
 
-const numberInput = (event) => {
-  const value = event.target.value;/* ? event.target.value[event.target.value.length - 1]: '';*/
+const getCartType = (value) => {
+  let re = new RegExp('^4');
+  if (value.match(re) != null) return 'visa';
+  re = new RegExp('^(34|37)');
+  if (value.match(re) != null) return 'amex';
+  re = new RegExp('^6011');
+  if (value.match(re) != null) return 'discover';
+  re = new RegExp('^9792');
+  if (value.match(re) != null) return 'troy';
 
-  console.log(value.length, oldNumberInput.length);
+  return 'visa';
+};
+
+const numberInput = (event) => {
+  const value = event.target.value;
+
+  console.log(getCartType(value));
+
   if (value.length <= 16) {
-    if (value.length > oldNumberInput.length) {
+    if (value.length > oldNumberInput.length) { // add
       for (let i = 0; i < value.length; i++) {
         mask[i].innerHTML = value[i];
       }
       oldNumberInput = value;
-    } else if (value.length < oldNumberInput.length) {
-      oldNumberInput = value;
-      for (let i = oldNumberInput.length; i >= value.length; i--) {
+    } else if (value.length < oldNumberInput.length) { // delete
+      for (let i = oldNumberInput.length - 1; i >= value.length; i--) {
         mask[i].innerHTML = '#'
       }
+      oldNumberInput = value;
     }
   }
 }
@@ -28,7 +42,7 @@ const nameInput = (event) => {
 const monthInput = (event) => {
   const value = parseInt(event.target.value);
   const monthField = document.querySelector('.cart-item__expirat-month');
-    monthField.innerHTML = ('0' + value).slice(-2);
+  monthField.innerHTML = ('0' + value).slice(-2);
 }
 
 const yearInput = (event) => {
