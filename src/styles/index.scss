@@ -14,7 +14,7 @@ body {
   }
 }
 
-.cart-input-form {
+.card-input-form {
   background-color: #fff;
   padding: 25px;
   padding-top: 195px;
@@ -27,7 +27,7 @@ select {
   width: 100%;
 }
 
-.cart-input {
+.card-input {
   margin-bottom: 15px;
   display: flex;
   flex-direction: column;
@@ -38,20 +38,20 @@ select {
   }
 }
 
-.cart-input-row {
+.card-input-row {
   display: flex;
   align-items: baseline;
   margin-bottom: 15px;
 }
 
-.cart-input-label {
+.card-input-label {
   font-size: 14px;
   margin-bottom: 5px;
 }
 
-.cart-input__group {
+.card-input__group {
   width: 100%;
-  .cart-input-col {
+  .card-input-col {
     display: flex;
     margin-top: 5px;
 
@@ -65,7 +65,7 @@ select {
   }
 }
 
-.cart-input-cvv {
+.card-input-cvv {
   display: flex;
   flex-direction: column;
 
@@ -77,7 +77,7 @@ select {
   }
 }
 
-.cart-button {
+.card-button {
   button {
     font-family: "Source Sans Pro", sans-serif;
     font-size: 22px;
@@ -91,38 +91,79 @@ select {
   }
 }
 
-.cart-list {
+.card-list {
+  color: #fff;
   max-width: 430px;
   height: 270px;
   background-color: #00bbb7;
   position: relative;
   z-index: 1;
-  margin: 0 auto -160px;
+  margin: 0 auto -120px;
   border-radius: 15px;
   padding: 25px 15px;
-
-  .cart-item__top {
+  
+  .card-item__top {
     display: flex;
     justify-content: space-between;
     margin: 0 10px 40px;
 
-    .cart-item__chip {
+    .card-item__chip {
       img {
         width: 60px;
       }
     }
 
-    .cart-item__logo {
+    .card-item__logo {
       img {
         width: 100px;
       }
     }
   }
 
-  .cart-item__number {
+  .card-item__number {
     padding: 10px 15px;
     font-size: 27px;
     font-weight: 500;
-    color: #fff;
+    margin-bottom: 30px;
+
+    .card-number-mask.default-mask span:nth-child(4n) {
+      margin-right: 30px;
+    }
+
+    .card-number-mask.apex-mask span:nth-child(4) {
+      margin-right: 30px;
+    }
+    .card-number-mask.apex-mask span:nth-child(12) {
+      margin-right: 30px;
+    }
   }
+
+  .card-item__footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10px;
+    font-weight: 500;
+
+    .cart-item__expires-item {
+      display: flex;
+      font-size: 22px;
+    }
+
+    .card-item__hodler {
+      width: 100%;
+      .cart-item__holder-item {
+        font-size: 22px;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 80%;
+        text-transform: uppercase;
+        max-width: 250px;
+      }
+    }
+
+  }
+}
+
+.active {
+  color: red;
 }

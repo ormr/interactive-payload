@@ -8,57 +8,74 @@
 </head>
 <body>
   <section>
-    <div class="cart-list">
-      <div class="cart-item">
-        <div class="cart-item__top">
-          <div class="cart-item__chip">
+    <div class="card-list">
+      <div class="card-item">
+        <div class="card-item__top">
+          <div class="card-item__chip">
             <img
               src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/chip.png"
               alt="chip-icon"
             >
           </div>
-          <div class="cart-item__logo">
-            <img src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/amex.png" alt="">
+          <div class="card-item__logo">
+            <img src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/amex.png" alt="cart-icon">
           </div>
         </div>
-        <div class="cart-item__number">
-          <label for="cartNumber">
-              <span class="cart-item__number--item">#</span>
-              <span class="cart-item__number--item">#</span>
-              <span class="cart-item__number--item">#</span>
-              <span class="cart-item__number--item">#</span>
-              <span class="cart-item__number--item">#</span>
-              <span class="cart-item__number--item">#</span>
-              <span class="cart-item__number--item">#</span>
-              <span class="cart-item__number--item">#</span>
-              <span class="cart-item__number--item">#</span>
-              <span class="cart-item__number--item">#</span>
-              <span class="cart-item__number--item">#</span>
-              <span class="cart-item__number--item">#</span>
-              <span class="cart-item__number--item">#</span>
-              <span class="cart-item__number--item">#</span>
-              <span class="cart-item__number--item">#</span>
-              <span class="cart-item__number--item">#</span>
+        <div class="card-item__number">
+          <label for="cardNumber" class="card-number-mask apex-mask">
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
           </label>
+        </div>
+        <div class="card-item__footer">
+          <div class="card-item__hodler">
+            <label for="cardHolder">
+              Card Holder
+              <div class="cart-item__holder-item">full name</div>
+            </label>
+          </div>
+          <div class="card-item__expires">
+            <label for="cardMonthHolder">
+            Expires
+            <div class="cart-item__expires-item">
+              <span class="cart-item__expirat-month">MM</span>/
+              <span class="cart-item__expirat-year">YY</span>
+            </div>
+            </label>
+          </div>
         </div>
       </div>
     </div>
-    <div class="cart-input-form">
-    <div class="cart-input">
-      <label for="cartNumber" class="cart-input-label">Card Number</label>
-      <input id="cartNumber" type="text" />
+    <form class="card-input-form">
+    <div class="card-input">
+      <label for="cardNumber" class="card-input-label">Card Number</label>
+      <input id="cardNumber" maxlength="16" />
     </div>
-    <div class="cart-input">
-      <label for="cartHolder" class="cart-input-label">Card Holders</label>
-      <input id="cartHolder" type="text" />
+    <div class="card-input">
+      <label for="cardHolder" class="card-input-label">Card Holders</label>
+      <input id="cardHolder" type="text" />
     </div>
-    <div class="cart-input-row">
-      <div class="cart-input__group">
-        <label for="cartMonthHolder" class="cart-input-label">
+    <div class="card-input-row">
+      <div class="card-input__group">
+        <label for="cardMonthHolder" class="card-input-label">
           Expiration Date
         </label>
-        <div class="cart-input-col">
-          <select id="cartMonthHolder" class="cart-input-row">
+        <div class="card-input-col">
+          <select id="cardMonthHolder" class="card-input-row">
             <option selected disabled>
               Month
             </option>
@@ -75,7 +92,7 @@
             <option>12</option>
           </select>
 
-          <select class="cart-input-row">
+          <select id="cardYearHolder" class="card-input-row">
             <option selected disabled>
               Year
             </option>
@@ -94,17 +111,17 @@
         </div>
       </div>
 
-      <div class="cart-input-cvv">
-        <label for="cartHolder" class="cart-input-label">
+      <div class="card-input-cvv">
+        <label for="cardHolder" class="card-input-label">
           CVV
         </label>
-        <input id="cartHolder" type="text" />
+        <input id="cardHolder" type="text" />
       </div>
     </div>
-    <div class="cart-button">
+    <div class="card-button">
       <button>Submit</button>
     </div>
-  </div>
+  </form>
   </section>
 </body>
 </html>
