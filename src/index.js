@@ -1,6 +1,6 @@
 import './styles/index.scss';
 
-const getCartType = (value) => {
+const getCardType = (value) => {
   let re = new RegExp('^4');
   if (value.match(re) != null) return 'visa';
   re = new RegExp('^(34|37)');
@@ -15,8 +15,22 @@ const getCartType = (value) => {
 
 const numberInput = (event) => {
   const value = event.target.value;
+  const logo = document.querySelector('.card-item__logo-item');
+  const cardType = getCardType(value);
 
-  console.log(getCartType(value));
+  if (cardType !== logo.classList[1]) {
+    if (cardType === 'amex') {
+      document.querySelector('.card-number-mask').classList.remove('default-mask');
+      document.querySelector('.card-number-mask').classList.add('apex-mask');
+    } else {
+      if (cardType !== 'default-mask') {
+        document.querySelector('.card-number-mask').classList.remove('apex-mask');
+        document.querySelector('.card-number-mask').classList.add('default-mask');
+      }
+    }
+    logo.classList.remove(logo.classList[1]);
+    logo.classList.add(cardType);
+  }
 
   if (value.length <= 16) {
     if (value.length > oldNumberInput.length) { // add
@@ -36,6 +50,9 @@ const numberInput = (event) => {
 const nameInput = (event) => {
   const value = event.target.value;
   const nameField = document.querySelector('.cart-item__holder-item');
+  if (!value) {
+    return nameField.innerHTML = 'full name'
+  }
   nameField.innerHTML = value;
 }
 

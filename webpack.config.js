@@ -80,7 +80,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   resolve: {
-    extensions: ['.js', '.json', '.css', '.jpg', '.xml', '.csv'],
+    extensions: ['.js', '.json', '.css', '.png'],
     alias: {
       '@models': path.resolve(__dirname, 'src/models'),
       '@': path.resolve(__dirname, 'src')
