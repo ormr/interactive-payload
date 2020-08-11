@@ -55,7 +55,7 @@ const nameInput = (event) => {
   const value = event.target.value;
   const nameField = document.querySelector('.card-item__holder-item');
   if (!value) {
-    return nameField.innerHTML = 'full name'
+    return nameField.innerHTML = 'full name';
   }
   nameField.innerHTML = value;
 }
@@ -72,9 +72,26 @@ const yearInput = (event) => {
   yearField.innerHTML = value.slice(2, 4);
 }
 
+const cvvInput = (event) => {
+  const value = event.target.value;
+  document.querySelector('.card-item-cvv-output').innerHTML = value;
+}
+
+const cvvInputFocused = (event) => {
+  document.querySelector('.card-list').classList.add('-active');
+  document.querySelector('#cardCvv').addEventListener('input', cvvInput);
+}
+
+const cvvInputUnfocused = (event) => {
+  document.querySelector('.card-list').classList.remove('-active');
+  document.querySelector('#cardCvv').removeEventListener('input', cvvInput);
+}
+
 const mask = document.querySelectorAll('.card-item__number--item');
 let oldNumberInput = '';
 document.getElementById('cardNumber').addEventListener('input', numberInput);
 document.getElementById('cardHolder').addEventListener('input', nameInput);
 document.getElementById('cardMonthHolder').addEventListener('change', monthInput);
 document.getElementById('cardYearHolder').addEventListener('change', yearInput);
+document.getElementById('cardCvv').addEventListener('focus', cvvInputFocused);
+document.getElementById('cardCvv').addEventListener('blur', cvvInputUnfocused)

@@ -92,15 +92,23 @@ select {
 }
 
 .card-list {
-  color: #fff;
-  max-width: 430px;
-  height: 270px;
-  background-color: #00bbb7;
-  position: relative;
-  z-index: 1;
-  margin: 0 auto -120px;
-  border-radius: 15px;
-  padding: 25px 15px;
+  margin-bottom: -120px;
+  .card-item {
+    color: #fff;
+    max-width: 430px;
+    height: 270px;
+    background-color: #00bbb7;
+    position: relative;
+    z-index: 1;
+    border-radius: 15px;
+    padding: 25px 15px;
+    background-image: url(https://www.ecomagazine.com/images/Newsletter/0_2019/Week_12-9-19/baltic-sea-4136488_1920.jpg);
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    user-select: none;
+    margin: 0 auto;
+  }
   
   .card-item__top {
     display: flex;
