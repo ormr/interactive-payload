@@ -130,6 +130,7 @@ select {
     font-size: 27px;
     font-weight: 500;
     margin-bottom: 30px;
+    display: flex;
 
     .card-number-mask.default-mask span:nth-child(4n) {
       margin-right: 20px;
@@ -145,6 +146,15 @@ select {
     .card-number-mask.apex-mask span:nth-child(12) {
       margin-right: 20px;
     }
+
+    .card-number-mask {
+      display: flex;
+    }
+
+    .card-item__number--item {
+      width: 16px;
+      margin-right: 2px;
+    }
   }
 
   .card-item__footer {
@@ -153,14 +163,15 @@ select {
     margin: 0px 10px;
     font-weight: 500;
 
-    .cart-item__expires-item {
+    .card-item__expires-item {
       display: flex;
       font-size: 22px;
+      min-width: 65px;
     }
 
     .card-item__hodler {
       width: 100%;
-      .cart-item__holder-item {
+      .card-item__holder-item {
         font-size: 22px;
         white-space: nowrap;
         overflow: hidden;

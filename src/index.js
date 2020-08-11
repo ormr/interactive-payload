@@ -35,7 +35,11 @@ const numberInput = (event) => {
   if (value.length <= 16) {
     if (value.length > oldNumberInput.length) { // add
       for (let i = 0; i < value.length; i++) {
-        mask[i].innerHTML = value[i];
+        if (i >= 4 && i < 12) {
+          mask[i].innerHTML = '*'
+        } else {
+          mask[i].innerHTML = value[i];
+        }
       }
       oldNumberInput = value;
     } else if (value.length < oldNumberInput.length) { // delete
@@ -49,7 +53,7 @@ const numberInput = (event) => {
 
 const nameInput = (event) => {
   const value = event.target.value;
-  const nameField = document.querySelector('.cart-item__holder-item');
+  const nameField = document.querySelector('.card-item__holder-item');
   if (!value) {
     return nameField.innerHTML = 'full name'
   }
@@ -58,13 +62,13 @@ const nameInput = (event) => {
 
 const monthInput = (event) => {
   const value = parseInt(event.target.value);
-  const monthField = document.querySelector('.cart-item__expirat-month');
+  const monthField = document.querySelector('.card-item__expirat-month');
   monthField.innerHTML = ('0' + value).slice(-2);
 }
 
 const yearInput = (event) => {
   const value = event.target.value;
-  const yearField = document.querySelector('.cart-item__expirat-year');
+  const yearField = document.querySelector('.card-item__expirat-year');
   yearField.innerHTML = value.slice(2, 4);
 }
 
