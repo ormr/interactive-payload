@@ -92,6 +92,7 @@ select {
 }
 
 .card-list {
+  transition: 1s;
   margin-bottom: -120px;
   .card-item {
     color: #fff;
@@ -192,8 +193,8 @@ select {
   }
 }
 
-.active {
-  color: red;
+.-active {
+  transform: perspective(1000px) rotateX(0deg) rotateY(180deg) rotateZ(0deg);
 }
 
 .chip {
@@ -228,4 +229,36 @@ select {
 .troy {
   width: 100px;
   background-image: url('../assets/images/troy.png');
+}
+
+.disabled {
+  display: none;
+}
+
+.card-item-side-back {
+  height: 100%;
+}
+
+.card-item-margnetic-stripe {
+  height: 50px;
+  width: 430px;
+  margin: 0 -15px 25px;
+  background-color: #000;
+}
+
+.card-item-cvv-label {
+  margin-bottom: 5px;
+  text-align: end;
+  margin-right: 10px;
+}
+
+.card-item-cvv-output {
+  display: flex;
+  align-items: center;
+  justify-self: flex-end;
+  color: #000;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 5px;
 }

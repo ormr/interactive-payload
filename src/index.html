@@ -10,118 +10,121 @@
   <section>
     <div class="card-list">
       <div class="card-item">
-        <div class="card-item-active">
-          <div class="card-item-margnetic-stripe"></div>
-          <div class="card-item-cvv-output"></div>
-        </div>
-        <div class="card-item__top">
-          <div class="card-item__chip chip">
-          </div>
-          <div class="card-item__logo">
-            <div class="card-item__logo-item visa"></div>
-          </div>
-        </div>
-        <div class="card-item__number">
-          <label for="cardNumber" class="card-number-mask default-mask">
-              <span class="card-item__number--item">#</span>
-              <span class="card-item__number--item">#</span>
-              <span class="card-item__number--item">#</span>
-              <span class="card-item__number--item">#</span>
-              <span class="card-item__number--item">#</span>
-              <span class="card-item__number--item">#</span>
-              <span class="card-item__number--item">#</span>
-              <span class="card-item__number--item">#</span>
-              <span class="card-item__number--item">#</span>
-              <span class="card-item__number--item">#</span>
-              <span class="card-item__number--item">#</span>
-              <span class="card-item__number--item">#</span>
-              <span class="card-item__number--item">#</span>
-              <span class="card-item__number--item">#</span>
-              <span class="card-item__number--item">#</span>
-              <span class="card-item__number--item">#</span>
-          </label>
-        </div>
-        <div class="card-item__footer">
-          <div class="card-item__hodler">
-            <label for="cardHolder">
-              Card Holder
-              <div class="card-item__holder-item">full name</div>
-            </label>
-          </div>
-          <div class="card-item__expires">
-            <label for="cardMonthHolder">
-            Expires
-            <div class="card-item__expires-item">
-              <span class="card-item__expirat-month">MM</span>/
-              <span class="card-item__expirat-year">YY</span>
+        <div class="card-item-side-front disabled">
+          <div class="card-item__top">
+            <div class="card-item__chip chip">
             </div>
+            <div class="card-item__logo">
+              <div class="card-item__logo-item visa"></div>
+            </div>
+          </div>
+          <div class="card-item__number">
+            <label for="cardNumber" class="card-number-mask default-mask">
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
+              <span class="card-item__number--item">#</span>
             </label>
           </div>
+          <div class="card-item__footer">
+            <div class="card-item__hodler">
+              <label for="cardHolder">
+                Card Holder
+                <div class="card-item__holder-item">full name</div>
+              </label>
+            </div>
+            <div class="card-item__expires">
+              <label for="cardMonthHolder">
+                Expires
+                <div class="card-item__expires-item">
+                  <span class="card-item__expirat-month">MM</span>/
+                  <span class="card-item__expirat-year">YY</span>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="card-item-side-back disabled">
+            <div class="card-item-margnetic-stripe"></div>
+            <div class="card-item-cvv-label">CVV</div>
+            <div class="card-item-cvv-output"></div>
         </div>
       </div>
     </div>
-    <form class="card-input-form">
-    <div class="card-input">
-      <label for="cardNumber" class="card-input-label">Card Number</label>
-      <input id="cardNumber" autocomplete="off" maxlength="16" />
-    </div>
-    <div class="card-input">
-      <label for="cardHolder" class="card-input-label">Card Holders</label>
-      <input id="cardHolder" type="text" />
-    </div>
-    <div class="card-input-row">
-      <div class="card-input__group">
-        <label for="cardMonthHolder" class="card-input-label">
-          Expiration Date
-        </label>
-        <div class="card-input-col">
-          <select id="cardMonthHolder" class="card-input-row">
-            <option selected disabled>
-              Month
-            </option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-          </select>
+        <form class="card-input-form">
+          <div class="card-input">
+            <label for="cardNumber" class="card-input-label">Card Number</label>
+            <input id="cardNumber" autocomplete="off" maxlength="16" />
+          </div>
+          <div class="card-input">
+            <label for="cardHolder" class="card-input-label">Card Holders</label>
+            <input id="cardHolder" type="text" />
+          </div>
+          <div class="card-input-row">
+            <div class="card-input__group">
+              <label for="cardMonthHolder" class="card-input-label">
+                Expiration Date
+              </label>
+              <div class="card-input-col">
+                <select id="cardMonthHolder" class="card-input-row">
+                  <option selected disabled>
+                    Month
+                  </option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                  <option>11</option>
+                  <option>12</option>
+                </select>
 
-          <select id="cardYearHolder" class="card-input-row">
-            <option selected disabled>
-              Year
-            </option>
-            <option>2020</option>
-            <option>2021</option>
-            <option>2022</option>
-            <option>2023</option>
-            <option>2024</option>
-            <option>2025</option>
-            <option>2026</option>
-            <option>2027</option>
-            <option>2028</option>
-            <option>2029</option>
-            <option>2030</option>
-          </select>
-        </div>
-      </div>
+                <select id="cardYearHolder" class="card-input-row">
+                  <option selected disabled>
+                    Year
+                  </option>
+                  <option>2020</option>
+                  <option>2021</option>
+                  <option>2022</option>
+                  <option>2023</option>
+                  <option>2024</option>
+                  <option>2025</option>
+                  <option>2026</option>
+                  <option>2027</option>
+                  <option>2028</option>
+                  <option>2029</option>
+                  <option>2030</option>
+                </select>
+              </div>
+            </div>
 
-      <div class="card-input-cvv">
-        <label for="cardCvv" class="card-input-label">
-          CVV
-        </label>
-        <input id="cardCvv" type="text" />
-      </div>
-    </div>
-    <div class="card-button">
-      <button>Submit</button>
-    </div>
-  </form>
-  </section>
+            <div class="card-input-cvv">
+              <label for="cardCvv" class="card-input-label">
+                CVV
+              </label>
+              <input id="cardCvv" type="text" />
+            </div>
+          </div>
+          <div class="card-button">
+            <button>Submit</button>
+          </div>
+        </form>
+      </section>
 </body>
 </html>

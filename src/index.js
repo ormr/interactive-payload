@@ -74,16 +74,33 @@ const yearInput = (event) => {
 
 const cvvInput = (event) => {
   const value = event.target.value;
-  document.querySelector('.card-item-cvv-output').innerHTML = value;
+  const mask = document.querySelector('.card-item-cvv-output');
+
+  // debugger;
+
+  if (value.length <= 4) {
+    if (value.length > oldMaskInput.length) { // add
+      mask.innerHTML += '*';
+      oldMaskInput = value;
+    } else if (value.length < oldMaskInput.length) { // delete
+      for (let i = oldMaskInput.length - 1; i >= value.length; i--) {
+        mask.innerHTML = mask.innerHTML.slice(0, value.length)
+      }
+      oldMaskInput = value;
+    }
+  }
 }
 
 const cvvInputFocused = (event) => {
-  document.querySelector('.card-list').classList.add('-active');
+
+  document.querySelector('.card-item-side-front').classList.add('disabled');
+  document.querySelector('.card-item-side-back').classList.remove('disabled');
   document.querySelector('#cardCvv').addEventListener('input', cvvInput);
 }
 
 const cvvInputUnfocused = (event) => {
-  document.querySelector('.card-list').classList.remove('-active');
+  document.querySelector('.card-item-side-front').classList.remove('disabled');
+  document.querySelector('.card-item-side-back').classList.add('disabled');
   document.querySelector('#cardCvv').removeEventListener('input', cvvInput);
 }
 
@@ -93,5 +110,6 @@ document.getElementById('cardNumber').addEventListener('input', numberInput);
 document.getElementById('cardHolder').addEventListener('input', nameInput);
 document.getElementById('cardMonthHolder').addEventListener('change', monthInput);
 document.getElementById('cardYearHolder').addEventListener('change', yearInput);
+let oldMaskInput = '';
 document.getElementById('cardCvv').addEventListener('focus', cvvInputFocused);
-document.getElementById('cardCvv').addEventListener('blur', cvvInputUnfocused)
+document.getElementById('cardCvv').addEventListener('blur', cvvInputUnfocused);
